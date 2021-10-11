@@ -12,11 +12,12 @@ Goals to achieve for the code are:
 ### Background
 
 Pizza describes a pizza with a size and optional toppings.  The price depends on size and number of toppings.  For example, large pizza is 280 Baht plus 20 Baht per topping.
+
 ```python
 pizza = Pizza('large')
-pizza.addTopping("mushroom")
+pizza.add_topping("mushroom")
 pizza.addtopping("pineapple")
-print("The price is", pizza.getPrice())
+print("The price is", pizza.get_price())
 'The price is 320'
 ```
 There are 2 files to start with:
@@ -177,11 +178,11 @@ This is the most complex refactoring, but it gives big gains in code quality:
 
 The `get_price` method has a block like this:
 ```python
-if self.size == Pizza.SMALL:
+if self.size == SMALL:
     price = ...
-elif self.size == Pizza.MEDIUM:
+elif self.size == MEDIUM:
     price = ...
-elif self.size == Pizza.LARGE:
+elif self.size == LARGE:
     price = ...
 ```
 The pizza has to know the pricing rule for each size, which makes the code complex.
